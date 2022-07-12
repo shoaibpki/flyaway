@@ -14,6 +14,11 @@
 </head>
 <body>
 	<%
+		if (session.getAttribute("uname") == null)
+			response.sendRedirect("error.jsp");
+	%>
+
+	<%
 		// get list of source and destination
 		List<Source_destination> srcdestList = FlyDao.getSrcDest("from Source_destination");
 		

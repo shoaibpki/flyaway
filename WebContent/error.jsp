@@ -4,17 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Add Airline Detail</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<%
-		if (session.getAttribute("uname") == null)
-			response.sendRedirect("error.jsp");
-	%>
-
-	<form action="add-airline.jsp" method="post">
-		Enter Airline Name: <input type="text" name="airlinename">
-		<input type="submit" value="Add Airline">
-	</form>
+	<h3 style="color:red;">Sorry you are not authorized to access this page</h3>
+	<a href="Welcome.jsp">Back</a>
 </body>
 </html>

@@ -7,11 +7,18 @@
 <title>Add Source and Destination</title>
 </head>
 <body>
+	<%
+		if (session.getAttribute("uname") == null)
+			response.sendRedirect("error.jsp");
+	%>
+
 	<form action="add-srcdest.jsp">
-		Enter Source :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="srccity"><br>
-		Enter Destination : <input type="text" name="dstcity"><br>
-		Enter Ticket Price: <input type="number" name="price"><br>
-		<input type="submit" value="Add Detail">
+		<table>
+			<tr><td><span>Enter Source :</span></td><td><input type="text" name="srccity"></td></tr>
+			<tr><td><span>Enter Destination :</span></td><td><input type="text" name="dstcity"></td></tr>
+			<tr><td><span>Enter Ticket Price:</span></td><td><input type="number" name="price"></td></tr>
+			<tr><td><input type="submit" value="Add Detail"></td></tr>
+		</table>
 	</form>
 
 </body>
