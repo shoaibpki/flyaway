@@ -15,7 +15,7 @@
 		src.setDestination(request.getParameter("dstcity"));
 		src.setTicketPrice(Double.parseDouble(request.getParameter("price")));
 		
-		FlyDao.saveData(src);
+		FlyDao.saveSrcDest(src);
 		
 		out.println("Successfully Saved!");
 	%>

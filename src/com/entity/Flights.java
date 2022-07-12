@@ -1,12 +1,16 @@
 package com.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,8 +30,30 @@ public class Flights {
 	@Column(name="noOfPersons")
 	private int noOfPersons;
 	
-	@Column(name="available")
-	private boolean available;
+	@Column(name="noOfTicket")
+	private int noOfTicket;
+	
+	@Column(name="srcDestId")
+	private int srcDestId;
+	
+	@Column(name="airLineId")
+	private int airLineId;
+	
+	public int getSrcDestId() {
+		return srcDestId;
+	}
+
+	public void setSrcDestId(int srcDestId) {
+		this.srcDestId = srcDestId;
+	}
+
+	public int getAirLineId() {
+		return airLineId;
+	}
+
+	public void setAirLineId(int airLineId) {
+		this.airLineId = airLineId;
+	}
 
 	public int getFlightId() {
 		return flightId;
@@ -61,12 +87,13 @@ public class Flights {
 		this.noOfPersons = noOfPersons;
 	}
 
-	public boolean isAvailable() {
-		return available;
+	public int getNoOfTicket() {
+		return noOfTicket;
 	}
 
-	public void setAvailable(boolean available) {
-		this.available = available;
+	public void setNoOfTicket(int noOfTicket) {
+		this.noOfTicket = noOfTicket;
 	}
+
 	
 }
