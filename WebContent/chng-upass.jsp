@@ -15,10 +15,9 @@
 			response.sendRedirect("error.jsp");
 		
 		String uid = session.getAttribute("userId").toString();
-		Login login = new Login();
-		login.setPassword(request.getParameter("upass"));
-		//FlyDao.saveUser(login, uid);
-		out.print("user id : "+ uid);
+		String pass = request.getParameter("upass");
+		FlyDao.saveUser(uid,pass);
+		//out.print("user id : "+ uid);
 		
 	%>
 </body>

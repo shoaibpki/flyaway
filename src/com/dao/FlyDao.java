@@ -50,10 +50,11 @@ public class FlyDao {
 	}
 
 	//	update user information in related table
-	public static void saveUser(Login cls, String id) {
+	public static void saveUser(String id, String password) {
+		Login cls = session.load(Login.class, Integer.parseInt(id));
+		cls.setPassword(password);
 		Transaction tx = session.beginTransaction();
-		session.clear();
-		session.save(id,cls);
+		session.update(cls);
 		tx.commit();
 	}
 
