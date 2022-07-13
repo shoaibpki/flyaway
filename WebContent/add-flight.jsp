@@ -13,8 +13,8 @@
 <body>
 	<%
 		//convert flightdate string into date format
-		SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-dd");
-		Date flightdate = format.parse(request.getParameter("flightdate"));
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Date flightdate = sdf.parse(request.getParameter("flightdate"));
 		
 		// set properties of flights table
 		Flights flight = new Flights();
@@ -24,7 +24,6 @@
 		flight.setFlightDate(flightdate);
 		flight.setNoOfPersons(Integer.parseInt(request.getParameter("noofpersons")));
 		FlyDao.saveFlight(flight);
-		
 		out.print("<h3>Save flight detail successfully!</h3>");
 	%>
 </body>
