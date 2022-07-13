@@ -75,4 +75,10 @@ public class FlyDao {
 		List list = session.createQuery(qry).list();
 		return list;
 	}
+
+	// get flight list
+	public static List<Flights> getFlighList(String qry) {
+		List list = session.createQuery(qry).list();
+		return list;
+	}
 }

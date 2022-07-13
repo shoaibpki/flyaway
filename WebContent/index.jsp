@@ -31,8 +31,8 @@
 		}
 	%>
 	<a href="changepass.jsp">Change Current password?</a><br><br>
-	<a href="addsrcdest.jsp">Add Source and Destination</a><br>
-	<a href="addairlin.jsp">Add Airline information</a><br>
-	<a href="addflight.jsp">Add Flight information</a><br>
+	<a href="srcdestlist.jsp">List Sources and Destinations</a>&nbsp;&nbsp;&nbsp;<a href="addsrcdest.jsp">Add Source and Destination</a><br>
+	<a href="airlinelist.jsp">List of Airlines</a>&nbsp;&nbsp;&nbsp;<a href="addairlin.jsp">Add Airline information</a><br>
+	<a href="flightlist.jsp">List of Flights</a>&nbsp;&nbsp;&nbsp;<a href="addflight.jsp">Add Flight information</a><br>
 </body>
 </html>
