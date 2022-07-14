@@ -24,7 +24,7 @@
 			</tr>
 			<tr>
 				<td>Enter No of Persons:</td>
-				<td><input type="number" name="nperson"></td>
+				<td><input type="number" name="nperson" min="1" max="200"></td>
 			</tr>
 			<tr><td><input type="submit" value="Search"></td></tr>
 		</table>

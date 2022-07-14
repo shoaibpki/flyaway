@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -39,6 +38,18 @@ public class Flights {
 	@Column(name="airLineId")
 	private int airLineId;
 	
+	@OneToMany
+	@JoinColumn(name="flightId")
+	List<Passenger> passengar;
+	
+	public List<Passenger> getPassenger() {
+		return passengar;
+	}
+
+	public void setPassenger(List<Passenger> passenger) {
+		this.passengar = passenger;
+	}
+
 	public int getSrcDestId() {
 		return srcDestId;
 	}

@@ -29,6 +29,7 @@
 	 	<mapping class="com.entity.Airlines"/> 
 		<mapping class="com.entity.Flights"/>
 		<mapping class="com.entity.Login"/>
+		<mapping class="com.entity.Passenger"/>
     </session-factory>
 
 </hibernate-configuration>

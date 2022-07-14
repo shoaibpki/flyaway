@@ -20,7 +20,7 @@ table, th, td {
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Flight Booking Form</title>
+<title>Available Flight Booking Form</title>
 </head>
 <body>
 	<%
@@ -33,6 +33,8 @@ table, th, td {
 		
 		List<Source_destination> srclist = FlyDao.getSrcDest("from Source_destination");
 	%>
+	<form action="register.jsp" method="post">
+		<input type="hidden" name="persons" value="<%out.print(nperson); %>">
 	<table style="width:30%">
 		<tr>
 			<th>Source</th>
@@ -42,14 +44,13 @@ table, th, td {
 		<%for (Source_destination src: srclist){%>
 			<tr>
 			<%if (src.getSource().equalsIgnoreCase(source) && src.getDestination().equalsIgnoreCase(dest)){%>
-			<td><%out.print(src.getSource());%></td>
-			<td><%out.print(src.getDestination());%></td>
-			<td><%out.print(src.getTicketPrice());%></td></tr></table>
+			<td><%=src.getSource()%></td>
+			<td><%=src.getDestination()%></td>
+			<td><%=src.getTicketPrice()%></td></tr></table>
 				<%List<Flights> flist = src.getFlights();%>
 				<table style="width:50%">
 				<tr>
 					<th>Booking</th>
-					<th>Flight Id</th>
 					<th>Available Tickets</th>
 					<th>Flight Name</th>
 					<th>Flight Date</th>
@@ -58,16 +59,16 @@ table, th, td {
 					if (flight.getFlightDate().compareTo(flightdate)==0 &&
 						flight.getNoOfTicket()<flight.getNoOfPersons()){ %>
 						<tr>
-							<td><a href="#">Book Tickets</a></td>
-							<td><%out.print(flight.getFlightId());%></td>
-							<td><%out.print(flight.getNoOfPersons() - flight.getNoOfTicket());%></td>
-							<td><%out.print(flight.getFlightName());%></td>
-							<td><%out.print(flight.getFlightDate());%></td>
+							<td style="text-align:center;"><input type="radio" name="fid" value="<%=flight.getFlightId() %>"></td>
+							<td><%=flight.getNoOfPersons() - flight.getNoOfTicket() %></td>
+							<td><%=flight.getFlightName() %></td>
+							<td><%=flight.getFlightDate() %></td>
 						</tr>
 				<% }
 				}
 			}
 		}%>
 	</table>
+	<input type="submit" value="Book"></form>
 </body>
 </html>

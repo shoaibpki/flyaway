@@ -9,6 +9,7 @@ import org.hibernate.Transaction;
 import com.entity.Airlines;
 import com.entity.Flights;
 import com.entity.Login;
+import com.entity.Passenger;
 import com.entity.Source_destination;
 import com.util.HibernateUtil;
 
@@ -33,6 +34,15 @@ public class FlyDao {
 		tx.commit();
 	}
 
+	//	update user information in related table
+	public static void saveFlight(int id, int soldTicket) {
+		Flights cls = session.load(Flights.class, id);
+		cls.setNoOfTicket(soldTicket);
+		Transaction tx = session.beginTransaction();
+		session.update(cls);
+		tx.commit();
+	}
+
 	//	add airline information in related table
 	public static void saveAirline(Airlines cls) {
 		Transaction tx = session.beginTransaction();
@@ -41,6 +51,14 @@ public class FlyDao {
 		tx.commit();
 	}
 	
+	//	add Passenger information in related table
+	public static void savePassenger(Passenger cls) {
+		Transaction tx = session.beginTransaction();
+		session.clear();
+		session.save(cls);
+		tx.commit();
+	}
+
 	//	add user information in related table
 	public static void saveUser(Login cls) {
 		Transaction tx = session.beginTransaction();
