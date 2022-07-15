@@ -30,9 +30,22 @@
 			response.sendRedirect("error.jsp");
 		}
 	%>
-	<a href="changepass.jsp">Change Current password?</a><br><br>
-	<a href="srcdestlist.jsp">List Sources and Destinations</a>&nbsp;&nbsp;&nbsp;<a href="addsrcdest.jsp">Add Source and Destination</a><br>
-	<a href="airlinelist.jsp">List of Airlines</a>&nbsp;&nbsp;&nbsp;<a href="addairlin.jsp">Add Airline information</a><br>
-	<a href="flightlist.jsp">List of Flights</a>&nbsp;&nbsp;&nbsp;<a href="addflight.jsp">Add Flight information</a><br>
+	<table>
+		<tr>
+			<td><a href="changepass.jsp">Change Current password?</a></td>
+		</tr>
+		<tr>
+			<td><a href="srcdestlist.jsp">List Sources and Destinations</a></td>
+			<td><a href="addsrcdest.jsp">Add Source and Destination</a></td>
+		</tr>
+		<tr>
+			<td><a href="airlinelist.jsp">List of Airline</a><br></td>
+			<td><a href="addairlin.jsp">Add Airline information</a></td>
+		</tr>
+		<tr>
+			<td><a href="flightlist.jsp">List of Flights</a></td>
+			<td><a href="addflight.jsp">Add Flight information</a></td>
+		</tr>
+	</table>
 </body>
 </html>
